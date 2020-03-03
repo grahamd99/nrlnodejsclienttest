@@ -1,0 +1,14 @@
+{
+  "name": "nrlnodejsclienttest",
+  "version": "1.0.0",
+  "description": "a test node.js app to integrate with nrl",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Graham Dodsworth",
+  "license": "ISC",
+  "dependencies": {
+    "got": "^10.6.0"
+  }
+}
