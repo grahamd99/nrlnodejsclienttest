@@ -1,4 +1,5 @@
 const got = require('got');
+const fs = require('fs');
  
 (async () => {
     try {
@@ -11,7 +12,17 @@ const got = require('got');
         			}
         		}
         		);
-        console.log(response.body);
+		var htmlresponse = "<HTML><BODY><P>Here is the response with stringify.<P>" + JSON.stringify(response.body) + 
+							"<P>Here is the response unalterd.<P>" + response.body + 							
+							"</BODY></HTML>";
+		console.log(htmlresponse);
+		fs.writeFile("output.html", htmlresponse, function(err) {
+			if(err) {
+				return console.log(err);
+			}
+    console.log("The file was saved!");
+}); 
+        //console.log(response.body);
         //=> '<!doctype html> ...'
     } catch (error) {
         console.log(error.response.body);
